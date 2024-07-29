@@ -6,6 +6,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .container {
   display: flex;
   justify-content: center;
@@ -13,11 +14,14 @@
   width: full;
 
   .left-side-container {
+    width: full;
+    padding-top: 20px;
     display: flex;
     flex: 1;
     align-items: center;
     flex-direction: column;
     border: 1px solid #000000;
+    padding-top: 20px;
     h1 {
       font-size: 2rem;
       margin: 10px;
@@ -27,6 +31,7 @@
       margin: 10px;
     }
     .items-list {
+      width: full;
       margin-top: 20px;
       display: flex;
       flex-direction: column;
@@ -35,7 +40,9 @@
         list-style: none;
         display: flex;
         flex-direction: column;
+        width: full;
         li {
+          width: full;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -46,19 +53,30 @@
           border-radius: 5px;
           cursor: pointer;
           &:hover {
-            background: rgb(175, 175, 175);
-            color: rgb(255, 255, 255);
+            border-color: orange
           }
 
-          button {
+          .delete-button {
             padding: 5px;
             border: none;
-            background: black;
+            background: red;
             color: white;
             cursor: pointer;
             border-radius: 5px;
             &:hover {
-                background-color: red;
+                background-color: rgb(170, 20, 20);
+              }
+          }
+          .edit-button{
+            padding: 5px;
+            padding-inline: 15px;
+            border: none;
+            background: green;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            &:hover {
+                background-color: rgb(5, 87, 5);
               }
           }
         }
@@ -70,6 +88,8 @@
     flex: 1;
     flex-direction: column;
     justify-content: center;
+    align-items: center; 
+    gap: 20px;
     .add-field {
       display: flex;
       align-items: center;

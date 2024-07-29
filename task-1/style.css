@@ -14,11 +14,14 @@
   width: full;
 }
 .container .left-side-container {
+  width: full;
+  padding-top: 20px;
   display: flex;
   flex: 1;
   align-items: center;
   flex-direction: column;
   border: 1px solid #000000;
+  padding-top: 20px;
 }
 .container .left-side-container h1 {
   font-size: 2rem;
@@ -29,6 +32,7 @@
   margin: 10px;
 }
 .container .left-side-container .items-list {
+  width: full;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -38,8 +42,10 @@
   list-style: none;
   display: flex;
   flex-direction: column;
+  width: full;
 }
 .container .left-side-container .items-list ul li {
+  width: full;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,25 +57,38 @@
   cursor: pointer;
 }
 .container .left-side-container .items-list ul li:hover {
-  background: rgb(175, 175, 175);
-  color: rgb(255, 255, 255);
+  border-color: orange;
 }
-.container .left-side-container .items-list ul li button {
+.container .left-side-container .items-list ul li .delete-button {
   padding: 5px;
   border: none;
-  background: black;
+  background: red;
   color: white;
   cursor: pointer;
   border-radius: 5px;
 }
-.container .left-side-container .items-list ul li button:hover {
-  background-color: red;
+.container .left-side-container .items-list ul li .delete-button:hover {
+  background-color: rgb(170, 20, 20);
+}
+.container .left-side-container .items-list ul li .edit-button {
+  padding: 5px;
+  padding-inline: 15px;
+  border: none;
+  background: green;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.container .left-side-container .items-list ul li .edit-button:hover {
+  background-color: rgb(5, 87, 5);
 }
 .container .right-side-container {
   display: flex;
   flex: 1;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 .container .right-side-container .add-field {
   display: flex;
