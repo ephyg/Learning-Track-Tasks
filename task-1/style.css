@@ -1,0 +1,101 @@
+* {
+  background: none;
+  color: #000000;
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  width: full;
+}
+.container .left-side-container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #000000;
+}
+.container .left-side-container h1 {
+  font-size: 2rem;
+  margin: 10px;
+}
+.container .left-side-container p {
+  font-size: 1rem;
+  margin: 10px;
+}
+.container .left-side-container .items-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .left-side-container .items-list ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.container .left-side-container .items-list ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #000000;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.container .left-side-container .items-list ul li:hover {
+  background: rgb(175, 175, 175);
+  color: rgb(255, 255, 255);
+}
+.container .left-side-container .items-list ul li button {
+  padding: 5px;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.container .left-side-container .items-list ul li button:hover {
+  background-color: red;
+}
+.container .right-side-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+.container .right-side-container .add-field {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.container .right-side-container .add-field input {
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #000000;
+}
+.container .right-side-container .add-field button {
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+}
+.container .right-side-container .add-field button:hover {
+  background: rgb(53, 53, 53);
+  color: rgb(255, 255, 255);
+}/*# sourceMappingURL=style.css.map */
