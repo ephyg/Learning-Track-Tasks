@@ -1,0 +1,122 @@
+* {
+  background: none;
+  color: #000000;
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  width: full;
+
+  .left-side-container {
+    width: full;
+    padding-top: 20px;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #000000;
+    padding-top: 20px;
+    h1 {
+      font-size: 2rem;
+      margin: 10px;
+    }
+    p {
+      font-size: 1rem;
+      margin: 10px;
+    }
+    .items-list {
+      width: full;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        width: full;
+        li {
+          width: full;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px;
+          width: 300px;
+          border: 1px solid #000000;
+          margin: 10px;
+          border-radius: 5px;
+          cursor: pointer;
+          &:hover {
+            border-color: orange
+          }
+
+          .delete-button {
+            padding: 5px;
+            border: none;
+            background: red;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            &:hover {
+                background-color: rgb(170, 20, 20);
+              }
+          }
+          .edit-button{
+            padding: 5px;
+            padding-inline: 15px;
+            border: none;
+            background: green;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            &:hover {
+                background-color: rgb(5, 87, 5);
+              }
+          }
+        }
+      }
+    }
+  }
+  .right-side-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    gap: 20px;
+    .add-field {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      input {
+        padding: 10px;
+        margin: 10px;
+        width: 300px;
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid #000000;
+      }
+      button {
+        padding: 10px;
+        margin: 10px;
+        width: 300px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: black;
+        color: white;
+        cursor: pointer;
+        &:hover {
+          background: rgb(53, 53, 53);
+          color: rgb(255, 255, 255);
+        }
+      }
+    }
+  }
+}
