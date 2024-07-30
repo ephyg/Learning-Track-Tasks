@@ -7,5 +7,5 @@
         . Edit item
     
 ### Image
-![Todo List](./add-item.png)
-![Todo List](./edit-item.png)
+![Todo List](./assets/add-item.png)
+![Todo List](./assets/edit-item.png)
