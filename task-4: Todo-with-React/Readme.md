@@ -13,7 +13,7 @@ Create a simple Todo application using React. The application have the following
     git clone https://github.com/ephyg/Learning-Track-Tasks.git
 2. Navigate to the `Task-4: Todo-with-React` directory
     ```sh
-    cd Learning-Track-Tasks/Task-4\ Todo-with-React
+    cd Learning-Track-Tasks/task-4\ todo-with-react
 3. Install the dependencies using the following command:
     ```sh
     npm install
