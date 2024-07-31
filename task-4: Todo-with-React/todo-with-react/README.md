@@ -1,30 +1,40 @@
-# React + TypeScript + Vite
+# Learning Track Task 4: Todo with React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To see the deployed version of the application, click [here](https://a2sv-todo-with-react.netlify.app/)
 
-Currently, two official plugins are available:
+## Task Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Create a simple Todo application using React. The application have the following features:
 
-## Expanding the ESLint configuration
+1. Add a new todo
+2. Edit a todo
+3. Delete a todo
+4. show all todos
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Guidelines setup the project
 
-- Configure the top-level `parserOptions` property like this:
+1. clone the repository to your local machine using the following command:
+   ```sh
+   git clone https://github.com/ephyg/Learning-Track-Tasks.git
+   ```
+2. Navigate to the `Task-4: Todo-with-React` directory
+   ```sh
+   cd Learning-Track-Tasks/task-4\ todo-with-react
+   ```
+3. Install the dependencies using the following command:
+   ```sh
+   npm install
+   ```
+4. Start the development server using the following command:
+   ```sh
+   npm run dev
+   ```
+5. Open your browser and navigate to `http://localhost:3000/` to view the application
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+To see the deployed version of the application, click [here](https://a2sv-todo-with-react.netlify.app/)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+![List](./src/assets/list.png)
+![List](./src/assets/add.png)
+![List](./src/assets/edit.png)
+![List](./src/assets/delete.png)

@@ -2,37 +2,48 @@ import { useEffect, useState } from "react";
 import { FaX } from "react-icons/fa6";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
-const url = "https://6534de61e1b6f4c59046fe81.mockapi.io/yenetta/Product";
+const url = "https://66aa7e66636a4840d7c7d052.mockapi.io/todo/todo";
 interface TodoCardProps {
+  created_at: string;
+  task_name: string;
+  task_description: string;
+  due_date: string;
   id: string;
-  product_name: string;
-  product_description: string;
-  price: number;
-  quantity: number;
 }
 const ToDoList = () => {
   const [todos, setTodos] = useState([]);
   const [edit, setEdit] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
   const [deleteId, setDeleteId] = useState("");
+  const date: Date = new Date();
+  const year: string = date.getUTCFullYear().toString();
+  const month = String(date.getUTCMonth() + 1)
+    .padStart(2, "0")
+    .toString();
+  const day = String(date.getUTCDate()).padStart(2, "0").toString();
+  const formattedDate = `${year}-${month}-${day}`;
+
   const [editedData, setEditedData] = useState({
+    created_at: formattedDate,
+    task_name: "",
+    task_description: "",
+    due_date: "",
     id: "",
-    product_name: "",
-    product_description: "",
-    price: 0,
-    quantity: 0,
   });
+
   const handleEdit = (items: TodoCardProps) => {
     setEditedData({
+      created_at: formattedDate,
+      task_name: items.task_name,
+      task_description: items.task_description,
+      due_date: items.due_date,
       id: items.id,
-      product_name: items.product_name,
-      product_description: items.product_description,
-      price: items.price,
-      quantity: items.quantity,
     });
     setEdit(true);
   };
-  const handleEditButton = async () => {
+
+  const handleEditButton = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     const res = await fetch(`${url}/${editedData.id}`, {
       method: "PUT",
       headers: {
@@ -42,6 +53,7 @@ const ToDoList = () => {
     });
     const data = await res.json();
     console.log(data);
+    console.log(editedData);
     setEdit(false);
     fetchdata();
   };
@@ -65,18 +77,24 @@ const ToDoList = () => {
   }, []);
   return (
     <div className="text-primary">
-      <div className="flex flex-col justify-center items-center gap-3">
+      <div className="flex flex-col justify-center items-center gap-3 pb-20">
         {todos.map((items: TodoCardProps, index: number) => (
           <div
             key={index}
             className="w-1/2 flex justify-between border px-5 py-5 cursor-pointer hover:border-orange-400 rounded-xl"
           >
             <div className="px-5 gap-2  w-full">
-              <h1 className="text-xl font-bold">{items.product_name}</h1>
-              <p className="mb-2">{items.product_description}</p>
+              <h1 className="text-xl font-bold">{items.task_name}</h1>
+              <p className="mb-2">{items.task_description}</p>
               <div className="flex justify-between">
-                <p className="text-accent1">{items.quantity} items</p>
-                <h2 className="text-xl">{items.price}$</h2>
+                <p className="text-accent1 text-sm">
+                  Due-Date: {""}
+                  {items.due_date}
+                </p>
+                <h2 className="text-sm">
+                  Created at: {""}
+                  {items.created_at}
+                </h2>
               </div>
             </div>
             <div className="flex flex-col justify-center gap-4 pl-5">
@@ -104,7 +122,7 @@ const ToDoList = () => {
         >
           <div className="flex bg-background p-10 max-w-2xl w-full flex-col rounded-xl">
             <div className="flex justify-between w-full mb-10">
-              <h1 className="text-2xl font-bold">Edit Item</h1>
+              <h1 className="text-2xl font-bold">Edit Todo</h1>
               <FaX
                 size={20}
                 className="text-red-500 hover:text-red-700 cursor-pointer"
@@ -114,9 +132,9 @@ const ToDoList = () => {
             <div className="flex gap-5 mb-14 h-full">
               <div className="flex-1 flex flex-col gap-3">
                 <label className="flex flex-col gap-1">
-                  <span className="text-sm ">Product Name</span>
+                  <span className="text-sm ">Task Name</span>
                   <input
-                    value={editedData.product_name}
+                    value={editedData.task_name}
                     type="text"
                     placeholder="Apple iPhone 13"
                     className="outline-none bg-transparent border-orange-100 text-sm border px-5 rounded-lg h-10"
@@ -124,39 +142,23 @@ const ToDoList = () => {
                     onChange={(e) =>
                       setEditedData({
                         ...editedData,
-                        product_name: e.target.value,
+                        task_name: e.target.value,
                       })
                     }
                   />
                 </label>
                 <label className="flex flex-col gap-1">
-                  <span className="text-sm ">Product Price</span>
+                  <span className="text-sm ">Task Due Date</span>
                   <input
-                    value={editedData.price}
+                    value={editedData.due_date}
                     onChange={(e) =>
                       setEditedData({
                         ...editedData,
-                        price: Number(e.target.value),
+                        due_date: e.target.value,
                       })
                     }
                     required
-                    type="number"
-                    placeholder="Apple iPhone 13"
-                    className="outline-none bg-transparent border-orange-100 text-sm border px-5 rounded-lg h-10"
-                  />
-                </label>
-                <label className="flex flex-col gap-1">
-                  <span className="text-sm ">Product Quantity</span>
-                  <input
-                    value={editedData.quantity}
-                    required
-                    onChange={(e) =>
-                      setEditedData({
-                        ...editedData,
-                        quantity: Number(e.target.value),
-                      })
-                    }
-                    type="number"
+                    type="text"
                     placeholder="Apple iPhone 13"
                     className="outline-none bg-transparent border-orange-100 text-sm border px-5 rounded-lg h-10"
                   />
@@ -164,13 +166,13 @@ const ToDoList = () => {
               </div>
               <div className="flex-1 flex flex-col ">
                 <label className="flex flex-col gap-1 min-h-full ">
-                  <span className="text-sm ">Product Description</span>
+                  <span className="text-sm ">Task Description</span>
                   <textarea
-                    value={editedData.product_description}
+                    value={editedData.task_description}
                     onChange={(e) =>
                       setEditedData({
                         ...editedData,
-                        product_description: e.target.value,
+                        task_description: e.target.value,
                       })
                     }
                     required

@@ -1,5 +1,8 @@
 # Learning Track Task 4: Todo with React
 
+To see the deployed version of the application, click [here](https://a2sv-todo-with-react.netlify.app/)
+
+
 ## Task Description
 
 Create a simple Todo application using React. The application have the following features:
@@ -30,3 +33,8 @@ Create a simple Todo application using React. The application have the following
 5. Open your browser and navigate to `http://localhost:3000/` to view the application
 
 To see the deployed version of the application, click [here](https://a2sv-todo-with-react.netlify.app/)
+
+![List](./todo-with-react/src/assets/list.png)
+![List](./todo-with-react/src/assets/add.png)
+![List](./todo-with-react/src/assets/edit.png)
+![List](./todo-with-react/src/assets/delete.png)
