@@ -48,7 +48,7 @@ const AddToDo = () => {
                   onChange={(e) =>
                     setTodos({ ...todos, task_name: e.target.value })
                   }
-                  placeholder="Apple iPhone 13"
+                  placeholder="Finish React project"
                   className="outline-none bg-transparent border-orange-100 text-sm border px-5 rounded-lg h-10"
                 />
               </label>
