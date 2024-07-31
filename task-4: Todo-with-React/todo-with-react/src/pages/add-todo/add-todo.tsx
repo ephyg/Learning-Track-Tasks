@@ -50,7 +50,7 @@ const AddToDo = () => {
                   onChange={(e) =>
                     setProduct({ ...product, price: Number(e.target.value) })
                   }
-                  placeholder="Apple iPhone 13"
+                  placeholder="250$"
                   className="outline-none bg-transparent border-orange-100 text-sm border px-5 rounded-lg h-10"
                 />
               </label>
@@ -61,7 +61,7 @@ const AddToDo = () => {
                   onChange={(e) =>
                     setProduct({ ...product, quantity: Number(e.target.value) })
                   }
-                  placeholder="Apple iPhone 13"
+                  placeholder="13"
                   className="outline-none bg-transparent border-orange-100 text-sm border px-5 rounded-lg h-10"
                 />
               </label>
@@ -76,7 +76,7 @@ const AddToDo = () => {
                       product_description: e.target.value,
                     })
                   }
-                  placeholder="Apple iPhone 13"
+                  placeholder="product desciption"
                   className="outline-none bg-transparent border-orange-100 border p-5 text-sm  rounded-lg flex-grow flex"
                 />
               </label>
