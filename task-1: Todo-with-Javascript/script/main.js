@@ -6,6 +6,8 @@ let addButton = document.getElementById("add-button");
 
 let items = ["Apple", "Banana", "Mango", "Orange", "Pineapple"];
 let taskTitle = document.getElementById("task-title")
+
+
 // show items
 function showItems() {
   itemsList.innerHTML = "";
@@ -16,7 +18,6 @@ function showItems() {
         <div class="">
           <button id="edit-button" class="edit-button">Edit</button>
           <button id="delete-button" class="delete-button">Delete</button
-
         </div>
       </li>`;
   }
