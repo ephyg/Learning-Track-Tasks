@@ -28,6 +28,6 @@ create a form and validate the form using react form hooks and display the error
 
 To see the deployed version of the application, click [here](https://jolly-khapse-a3d582.netlify.app/)
 
-![List](./src/assets/required.png)
-![List](./src/assets/ScreenShot.png)
-![List](./src/assets/success.png)
+![List](./contact-form/src//assets/required.png)
+![List](./contact-form//src/assets/ScreenShot.png)
+![List](./contact-form//src/assets/success.png)
