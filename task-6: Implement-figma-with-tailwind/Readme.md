@@ -33,5 +33,5 @@ npm run dev
 
 ## screenshots of the website
 
-![List](./public/joblist.png)
-![List](./public/jobdetail.png)
+![List](./figma-implementation/public/joblist.png)
+![List](./figma-implementation//public/jobdetail.png)
