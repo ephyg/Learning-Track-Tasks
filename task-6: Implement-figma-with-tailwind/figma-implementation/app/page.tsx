@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { job_postings } from "./data/JobListData";
-import { JobListType } from "./types/page";
+import { JobListType } from "../types/page";
 import JobCard from "./_components/job-card";
 
 const Home = () => {
