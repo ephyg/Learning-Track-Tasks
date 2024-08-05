@@ -1,4 +1,3 @@
-"use client"
 import React from "react";
 import Link from "next/link";
 import { JobDetailType } from "../types/page";
@@ -8,7 +7,6 @@ import Filter from "./_components/filter";
 
 const Home = async () => {
   let data = await getMostRelevantJobs();
-
 
   return (
     <div className="flex flex-col px-4 md:px-52 pt-10 gap-8">
