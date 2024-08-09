@@ -22,6 +22,7 @@ import Button from "@/components/Button/Button";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { verify } from "@/server-actions/auth";
+import { useSession } from "next-auth/react";
 
 const FormSchema = z.object({
   pin: z.string().min(4, {
@@ -30,6 +31,7 @@ const FormSchema = z.object({
 });
 
 const VerifyForm = (props: { email: string }) => {
+  const session = useSession();
   const router = useRouter();
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -58,6 +60,10 @@ const VerifyForm = (props: { email: string }) => {
     setLoading(false);
   };
   const isFormValid = form.watch("pin").length === 4;
+
+  if (session.data) {
+    router.push("/posts");
+  }
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">

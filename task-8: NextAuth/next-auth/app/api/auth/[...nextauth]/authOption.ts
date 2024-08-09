@@ -30,7 +30,7 @@ export const authOptions: AuthOptions = {
           password: password,
         });
         const user = response.data;
-        // console.log(response, "response");
+        console.log(response, "response");
         if (response.success && user) {
           return {
             id: user.id,
@@ -44,7 +44,7 @@ export const authOptions: AuthOptions = {
             success: user.success,
           };
         } else {
-          return null;
+          return null
         }
       },
     }),

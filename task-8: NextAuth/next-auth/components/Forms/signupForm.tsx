@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
 import InputFIeld from "../InputField/InputField";
+import { useSession } from "next-auth/react";
 interface SignUpInputType {
   fullname: string;
   email: string;
@@ -17,7 +18,8 @@ interface SignUpInputType {
   confirmpassword: string;
 }
 const SignupForm = () => {
-  const router = useRouter();
+    const session = useSession();
+    const router = useRouter();
   const [errorMessage, setErrorMessage] = React.useState("");
   const [loading, setLoading] = React.useState(false);
   const { formState, register, handleSubmit } = useForm<SignUpInputType>({
@@ -42,6 +44,9 @@ const SignupForm = () => {
     setLoading(false);
   };
 
+  if (session.data) {
+    router.push("/posts");
+  }
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}

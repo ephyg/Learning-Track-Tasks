@@ -9,7 +9,7 @@ const Login = () => {
       <div className="flex-1 flex"></div>
       <div className=" flex-1 flex flex-col justify-center items-center w-full gap-3">
         <div className="flex flex-col items-center justify-center gap-6 px-28 w-full">
-          <h1 className="font-black text-headertext1 text-black">
+          <h1 className="font-epilogue900 text-headertext1 text-black">
             Welcome Back,
           </h1>
           <div className="w-full flex">

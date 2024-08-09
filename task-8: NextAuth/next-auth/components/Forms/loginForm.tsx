@@ -36,13 +36,13 @@ const LoginForm = () => {
     if (result?.ok) {
       router.push("/posts");
     } else {
-      setErrorMessage(result?.error);
+      setErrorMessage("Invalid Credentials");
     }
     setIsLoading(false);
   };
-  // if (session.data) {
-  //   router.push("/home");
-  // }
+  if (session.data) {
+    router.push("/posts");
+  }
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -79,5 +79,6 @@ const LoginForm = () => {
     </form>
   );
 };
+
 
 export default LoginForm;

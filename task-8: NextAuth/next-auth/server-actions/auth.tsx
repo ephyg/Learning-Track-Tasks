@@ -10,7 +10,10 @@ export const login = async (formData: LoginType) => {
   const res = await fetch(`${url}/login`, {
     method: "POST",
     body: JSON.stringify(formData),
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json"
+      //get token from session 
+      // "Authorization": `Bearer ${session.data.token}`
+     },
   });
   const data = await res.json();
   return data;

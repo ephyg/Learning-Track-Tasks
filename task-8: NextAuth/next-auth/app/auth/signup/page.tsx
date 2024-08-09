@@ -9,7 +9,7 @@ const SignUp = () => {
     <div className="min-h-screen flex flex-col justify-center items-center">
       <div className="flex flex-col justify-center items-center w-2/5  py-10 my-5 rounded-lg  border-bordercolor">
         <div className="flex flex-col gap-6 w-full justify-center items-center">
-          <h1 className="font-black text-headertext1 text-black">
+          <h1 className="font-epilogue900 text-headertext1 text-black">
             Sign up Today!
           </h1>
           <button className="flex justify-center border w-full rounded-md items-center border-bordercolor py-3 gap-3">
@@ -29,7 +29,7 @@ const SignUp = () => {
           <div className="flex gap-2 justify-start w-full">
             <p>Already have an account? </p>
             <Link
-              href="/auth/login"
+              href="/auth/signIn"
               className="text-blue font-epilogue font-epilogue600"
             >
               Login
