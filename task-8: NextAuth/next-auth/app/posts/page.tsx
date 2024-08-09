@@ -1,13 +1,13 @@
 import React from "react";
 import Link from "next/link";
-import { JobDetailType } from "../types/page";
-import JobCard from "./_components/job-card";
-import { getJobsList, getMostRelevantJobs } from "./api/jobsApi";
-import Filter from "./_components/filter";
+import Filter from "@/components/Filter/filter";
+import JobCard from "@/components/JobCard/job-card";
+import { JobDetailType } from "@/types/page";
+import { getMostRelevantJobs } from "@/server-actions/jobs-action";
 
 const Home = async () => {
   let data = await getMostRelevantJobs();
-
+  console.log(data)
   return (
     <div className="flex flex-col px-4 md:px-52 pt-10 gap-8">
       <div className="flex justify-between items-center">
@@ -26,7 +26,7 @@ const Home = async () => {
       </div>
       <div className="flex flex-col gap-9">
         {data.data.map((job: JobDetailType, index: number) => (
-          <Link key={index} href={`/detail/${job.id}`}>
+          <Link key={index} href={`/posts/detail/${job.id}`}>
             <JobCard
               key={index}
               title={job.title}

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import { Profile } from "../assets/icons";
 interface JobListType {
   title: string;
   description: string;
@@ -8,7 +7,7 @@ interface JobListType {
   location: string[];
   categories: string[];
   optype: string;
-  logoUrl?: string;
+  logoUrl: string;
 }
 const JobCard = ({
   title,

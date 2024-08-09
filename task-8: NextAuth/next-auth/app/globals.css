@@ -1,16 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --normal-text: 16px;
+    --small-text: 12px;
+    --header-text-1: 32px;
+    --header-text-2: 24px;
+    --header-text-3: 20px;
+
+    --background: #ffffff;
+    --primary: #25324b;
+    --icon: #56cdad;
+    --gray: #7c8493;
+    --green: #56cdad;
+    --orange: #ffb836;
+    --blue: linear-gradient(0deg, #4640de, #4640de),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+
+    --pr: #25324b;
+    --blue: #4640de;
+    --b-color: #d6ddeb;
+
+
+
+
+    /* shadcn */
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
+    /* --primary: 222.2 47.4% 11.2%; */
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
