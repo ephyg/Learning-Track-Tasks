@@ -20,8 +20,7 @@ export const addBookmark = async (jobId: string) => {
   });
   const data = await res.json();
   console.log("added", data);
-  revalidatePath("/bookmarks");
-  revalidatePath("/posts");
+  revalidatePath("/");
   return data;
 };
 
@@ -38,7 +37,6 @@ export const deleteBookmark = async (jobId: string) => {
   });
   const data = await res.json();
   console.log("deleted", data);
-  revalidatePath("/bookmarks");
-  revalidatePath("/posts");
+  revalidatePath("/");
   return data;
 };
