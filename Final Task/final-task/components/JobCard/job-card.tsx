@@ -39,7 +39,7 @@ const JobCard = ({
   ];
 
   return (
-    <div className="flex flex-col md:flex-row gap-6 px-2 md:px-9 py-2 md:py-6 border-[#d6ddeb] border rounded-3xl">
+    <div id="card" className="flex flex-col md:flex-row gap-6 px-2 md:px-9 py-2 md:py-6 border-[#d6ddeb] border rounded-3xl">
       <div className="">
         <Link href={route}>
           <div className="w-20 h-20 relative z-10">
