@@ -1,9 +1,10 @@
-# Learning Track Task 8: NextAuth
+# Learning Track Final Task
 
 
 
 ## Task Description
 Implementation of Authentication using NextAuth 
+Implement bookmarking of job posts
 
 
 ## Guidelines setup the project
@@ -13,10 +14,10 @@ Implementation of Authentication using NextAuth
 ```bash
 git clone https://github.com/ephyg/Learning-Track-Tasks.git
 ```
-2. Navigate to the task 6 directory using the following command:
+2. Navigate to the project directory using the following command:
 
 ```bash
-cd Learning-Track-Tasks/integrating-api-data
+cd Learning-Track-Tasks/final-task
 ```
 
 3. Install the dependencies using the following command:
@@ -34,10 +35,11 @@ npm run dev
 
 ## screenshots of the website
 
-![List](./next-auth/public/start.png)
-![List](./next-auth/public/login1.png)
-![List](./next-auth/public/signup.png)
-![List](./next-auth/public/post.png)
-![List](./next-auth/public/logout.png)
-
+![List](./final-task/public/screenshots/1.%20landing-page.png)
+![List](./final-task/public/screenshots/2.%20signup.png)
+![List](./final-task/public/screenshots/3.%20verify.png)
+![List](./final-task/public/screenshots/4.%20login.png)
+![List](./final-task/public/screenshots/5.%20job-posts.png)
+![List](./final-task/public/screenshots/6.%20bookmarks-list.png)
+![List](./final-task/public/screenshots/7.%20logout.png)
 
