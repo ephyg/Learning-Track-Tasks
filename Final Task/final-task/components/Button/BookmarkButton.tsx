@@ -6,10 +6,7 @@ import { CiBookmark } from "react-icons/ci";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/utils/authOption";
 import useSWRMutation from "swr/mutation";
-import {
-  addBookmark,
-  deleteBookmark,
-} from "@/server-actions/bookmarks";
+import { addBookmark, deleteBookmark } from "@/server-actions/bookmarks";
 import { FaBookmark } from "react-icons/fa";
 import { getJobsList, getMostRelevantJobs } from "@/server-actions/jobs-action";
 interface BookmarkButtonProps {
@@ -30,9 +27,9 @@ const BookmarkButton = ({ jobId, isBookmarked }: BookmarkButtonProps) => {
   return (
     <div onClick={handleClick} className="cursor-pointer">
       {bookmarked ? (
-        <FaBookmark size={30} color="gray" />
+        <FaBookmark size={30} color="gray" id="bookmarked" />
       ) : (
-        <CiBookmark size={30} color="gray" />
+        <CiBookmark size={30} color="gray" id="unbookmarked" />
       )}
     </div>
   );
