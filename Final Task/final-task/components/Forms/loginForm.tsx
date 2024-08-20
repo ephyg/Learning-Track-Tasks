@@ -36,8 +36,8 @@ const LoginForm = () => {
       router.push("/posts");
     } else {
       setErrorMessage("Invalid Credentials");
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
 
   return (

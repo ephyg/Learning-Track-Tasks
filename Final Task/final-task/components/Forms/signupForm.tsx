@@ -11,6 +11,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import InputFIeld from "../InputField/InputField";
 import { useSession } from "next-auth/react";
+import { set } from "zod";
 interface SignUpInputType {
   fullname: string;
   email: string;
@@ -18,7 +19,7 @@ interface SignUpInputType {
   confirmpassword: string;
 }
 const SignupForm = () => {
-    const router = useRouter();
+  const router = useRouter();
   const [errorMessage, setErrorMessage] = React.useState("");
   const [loading, setLoading] = React.useState(false);
   const { formState, register, handleSubmit } = useForm<SignUpInputType>({
@@ -39,8 +40,8 @@ const SignupForm = () => {
       router.push(`/auth/signup/verify/${data.email}`);
     } else {
       setErrorMessage(result.message);
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (

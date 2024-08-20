@@ -16,9 +16,11 @@ const Button = ({
   classname,
   isLoading,
   disabled,
+  onClick,
 }: ButtonProps) => {
   return (
     <button
+      onClick={onClick}
       type={typ}
       disabled={disabled}
       className={`flex justify-center items-center gap-3 w-full bg-[#100e44] h-12 rounded-3xl text-white font-epilogue font-epilogue700 ${classname}`}
