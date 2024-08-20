@@ -3,20 +3,20 @@ import { sign } from "crypto";
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useParams, usePathname } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import React, { use } from "react";
 import { FaPowerOff } from "react-icons/fa";
 import { mutate } from "swr";
 
 const NavBar = () => {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL + "/search";
-
+  const route = useRouter();
   const session = useSession();
   const params = usePathname();
   const pathname = params;
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const handleClick = () => {
-    signOut();
+  const handleClick = async () => {
+    await signOut();
   };
 
   return (
@@ -35,27 +35,51 @@ const NavBar = () => {
             >
               Home
             </Link>
-            <Link
-              href="/posts"
-              
-              className={` ${
-                pathname.startsWith("/posts") ? "text-orange" : ""
-              } cursor-pointer hover:text-orange`}
-            >
-              Posts
-            </Link>
-            <Link
-              href="/bookmarks"
-              
-              className={` ${
-                pathname === "/bookmarks" ? "text-orange" : ""
-              } cursor-pointer hover:text-orange`}
-            >
-              Bookmark
-            </Link>
+            {session.data ? (
+              <>
+                <Link
+                  id="POSTS"
+                  href="/posts"
+                  className={` ${
+                    pathname.startsWith("/posts") ? "text-orange" : ""
+                  } cursor-pointer hover:text-orange`}
+                >
+                  Posts
+                </Link>
+                <Link
+                  id="bookmarks"
+                  href="/bookmarks"
+                  className={` ${
+                    pathname === "/bookmarks" ? "text-orange" : ""
+                  } cursor-pointer hover:text-orange`}
+                >
+                  Bookmark
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link
+                  id="bookmarks"
+                  href="/auth/signIn"
+                  className="cursor-pointe bg-primary text-white px-3 py-1 rounded-lg hover:bg-orange hover:text-primary"
+                >
+                  Login
+                </Link>{" "}
+                <Link
+                  id="bookmarks"
+                  href="/auth/signup"
+                  className="cursor-pointe bg-primary text-white px-3 py-1 rounded-lg hover:bg-orange hover:text-primary"
+                >
+                  SignUp
+                </Link>
+              </>
+            )}
           </ul>
           {session.data && (
-            <div className="relative font-[sans-serif] w-max mx-auto">
+            <div
+              className="relative font-[sans-serif] w-max mx-auto "
+              id="profile"
+            >
               <button
                 type="button"
                 className=" flex items-center rounded-full text-[#333] text-sm border border-gray-300 outline-none hover:bg-gray-100"
@@ -84,6 +108,7 @@ const NavBar = () => {
                   </li>
                   <li
                     onClick={handleClick}
+                    id="logout"
                     className="py-1 px-5 flex items-center z-[1000] bg-blue text-white hover:bg-gray-100 font-epilogue900 rounded-lg my-2 text-sm cursor-pointer gap-2"
                   >
                     <FaPowerOff />
