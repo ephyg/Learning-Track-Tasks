@@ -1,0 +1,9 @@
+{
+  "Home": {
+    "title": "Découvrez Notre Site Web",
+    "description": "Découvrez comment implémenter une localisation fluide avec Next.js."
+  },
+  "About": {
+    "message": "Améliorez vos compétences en maîtrisant la localisation avec Next.js."
+  }
+}

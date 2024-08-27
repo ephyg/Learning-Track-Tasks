@@ -1,0 +1,9 @@
+{
+  "Home": {
+    "title": "Discover Our Website",
+    "description": "Explore how to implement seamless localization with Next.js."
+  },
+  "About": {
+    "message": "Enhance your skills by mastering localization with Next.js."
+  }
+}
